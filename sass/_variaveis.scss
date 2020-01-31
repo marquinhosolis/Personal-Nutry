@@ -1,0 +1,29 @@
+$dark: #144069;
+$light: #009BDF;
+
+.container {
+    padding: 0 20px;
+    max-width: 1220px;
+    margin: auto;
+}
+
+@mixin proporcao($width, $height) {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    >.content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
